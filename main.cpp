@@ -93,3 +93,21 @@ TEST(CandleTest, IsRed_False_1)
     Candle candle(100, 160, 90, 150); // close > open
     EXPECT_FALSE(candle.is_red());
 }
+
+TEST(CandleTest, IsGreen_True)
+{
+    Candle candle(100, 160, 90, 150); // close > open
+    EXPECT_TRUE(candle.is_green());
+}
+
+TEST(CandleTest, IsGreen_False_1)
+{
+    Candle candle(150, 160, 140, 100); // close < open
+    EXPECT_FALSE(candle.is_green());
+}
+
+TEST(CandleTest, IsGreen_False_2)
+{
+    Candle candle(150, 160, 100, 150);
+    EXPECT_FALSE(candle.is_green());
+}
