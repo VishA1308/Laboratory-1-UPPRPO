@@ -21,3 +21,21 @@ TEST(CandleTest, BodyContains_BoundaryOpen)
     Candle candle = Candle(100, 200, 50, 150);
     EXPECT_TRUE(candle.body_contains(100));
 }
+
+TEST(CandleTest, Contains_True)
+{
+    Candle candle = Candle(100, 200, 50, 150);
+    EXPECT_TRUE(candle.contains(120));
+}
+
+TEST(CandleTest, Contains_False)
+{
+    Candle candle = Candle(100, 200, 50, 150);
+    EXPECT_FALSE(candle.contains(30));
+}
+
+TEST(CandleTest, Contains_BoundaryLow)
+{
+    Candle candle = Candle(100, 200, 50, 150);
+    EXPECT_TRUE(candle.contains(50));
+}
