@@ -76,3 +76,20 @@ TEST(CandleTest, BodySize_3)
     Candle candle = Candle(70, 200, 50, 250);
     EXPECT_EQ(candle.body_size(), 180);
 }
+
+TEST(CandleTest, IsRed_True)
+{
+    Candle candle = Candle(150, 100, 160, 90);
+    EXPECT_TRUE(candle.is_red());
+}
+TEST(CandleTest, IsRed_False_2)
+{
+    Candle candle = Candle(150, 100, 160, 150);
+    EXPECT_FALSE(candle.is_red());
+}
+
+TEST(CandleTest, IsRed_False_1)
+{
+    Candle candle(100, 160, 90, 150); // close > open
+    EXPECT_FALSE(candle.is_red());
+}
