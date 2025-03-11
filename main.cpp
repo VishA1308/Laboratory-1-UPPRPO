@@ -57,3 +57,22 @@ TEST(CandleTest, FullSize_3)
     Candle candle = Candle(100, 300, 140, 100);
     EXPECT_EQ(candle.full_size(), 160);
 }
+
+TEST(CandleTest, BodySize_1)
+{
+    Candle candle = Candle(100, 200, 150, 50);
+    EXPECT_EQ(candle.body_size(), 50);
+}
+
+TEST(CandleTest, BodySize_2)
+{
+    Candle candle = Candle(100, 300, 50, 250);
+    EXPECT_EQ(candle.body_size(), 150);
+}
+
+
+TEST(CandleTest, BodySize_3)
+{
+    Candle candle = Candle(70, 200, 50, 250);
+    EXPECT_EQ(candle.body_size(), 180);
+}
